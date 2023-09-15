@@ -60,7 +60,9 @@
               <!-- /.notifications -->
               <div class="searcharea"></div>
               <!-- /.searcharea -->
-              <div class="contacts">
+
+              <!-- devo inserire il click -->
+              <div class="contacts" >
                 <div class="contact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
                   <div class="avatar">
                     <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
