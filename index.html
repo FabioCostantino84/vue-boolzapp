@@ -95,16 +95,14 @@
       
               </div>
               <!-- /.active_contact -->
-              <div class="messages">
-                <div class="sent">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
+              <div class="messages" >
+                <div v-for="message in contacts[activeContact].messages">
+                    <div  :class="message.status" >
+                        {{ message.message }}
+                    </div>
+
                 </div>
-                   <div class="sent">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
-                </div>
-                <div class="received">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, veritatis.
-                </div>
+                   
       
               </div>
               <!-- /.messages -->

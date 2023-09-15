@@ -21,16 +21,20 @@ const {
           avatar: '_io',
           name: 'Sofia'
         },
+
+        contact:0,
         activeContact: 0,
         contacts: [
           {
             id: 1,
-            name: 'Michele',
+            name: 'Michele',//contacts[0].name;
             avatar: '_1',
             visible: true,
-            messages: [{
+            //contacts[0].messages
+            messages: [
+            {
               date: '10/01/2020 15:30:55',
-              message: 'Hai portato a spasso il cane?',
+              message: 'Hai portato a spasso il cane?',//contacts[0].messages[0].message
               status: 'sent'
             },
             {
