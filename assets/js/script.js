@@ -23,6 +23,8 @@ const {
   createApp({
     data() {
       return {
+
+        newMessage:{},
         me: {
           avatar: '_io',
           name: 'Sofia'
@@ -190,6 +192,10 @@ const {
         ]
       }
     },
+    methods:{
+
+
+    }
     
   }).mount('#app')
   
