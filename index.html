@@ -90,9 +90,9 @@
 
             <div class="contact_details">
               <div class="avatar" v-for="user in contacts[activeContact].avatar">
-                <img :src="`./assets/img/avatar${user.avatar}.jpg`" alt="">
+                <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
               </div>
-              <div class="name">{{activeContact}}</div>
+              <div class="name">{{contacts[activeContact].name}}</div>
             </div>
             <div class="actions">
               <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>

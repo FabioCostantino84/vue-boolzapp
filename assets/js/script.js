@@ -22,7 +22,7 @@ const {
           name: 'Sofia'
         },
 
-        contact:0,
+        //contact:0,
         activeContact: 0,
         contacts: [
           {
