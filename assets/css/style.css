@@ -167,6 +167,10 @@ body
   align-items: center;
   column-gap: 1rem;
 }
+p{
+  color: var(--bz-gray);
+  font-size: small;
+}
 
 /* #endregion left */
 
@@ -215,7 +219,7 @@ body
 }
 
 .toolbar .emoji,
-.toolbar .mic
+.toolbar .sending
 {
   display: flex;
   align-items: center;

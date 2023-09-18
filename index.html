@@ -37,7 +37,7 @@
               <div class="avatar">
                 <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
               </div>
-              <div class="name">{{me.name}}</div>
+              <h6 class="name">{{me.name}}</h6>
             </div>
             <div class="actions">
               <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
@@ -74,8 +74,15 @@
               <div class="avatar">
                 <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
               </div>
-              <div class="text">
-                {{contact.name}}
+              <div>
+                <h6 class="text">
+                  {{contact.name}}
+                </h6>
+                <p>Ultimo messaggio inviato</p>
+              </div>
+              <div>
+
+                <p class="text-end">12:00</p>
               </div>
             </div>
 
@@ -92,7 +99,10 @@
               <div class="avatar">
                 <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="">
               </div>
-              <div class="name">{{contacts[activeContact].name}}</div>
+              <div>
+                <h6 class="name">{{contacts[activeContact].name}}</h6>
+                <p>Ultimo accesso oggi alle 12:00</p>
+              </div>
             </div>
             <div class="actions">
               <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
@@ -113,11 +123,11 @@
           <!-- /.messages -->
           <div class="toolbar">
             <div class="emoji">
-              <i class="fa-solid fa-smile    "></i>
+              <i class="fa-solid fa-smile"></i>
             </div>
-            <input type="text">
-            <div class="mic">
-              <i class="fa-solid fa-microphone"></i>
+            <input type="text" placeholder="scrivi un messaggio">
+            <div class="sending">
+              <i class="fa-solid fa-paper-plane"></i>
             </div>
           </div>
           <!-- /.toolbar -->
