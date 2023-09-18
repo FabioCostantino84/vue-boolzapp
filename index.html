@@ -103,13 +103,11 @@
           </div>
           <!-- /.active_contact -->
           <div class="messages">
-            <div v-for="message in contacts[activeContact].messages">
-              <div :class="message.status">
-                {{ message.message }}
-              </div>
+            <div :class="contact.status == 'sent' ? 'sent' : 'received'" v-for="contact in contacts[activeContact].messages">
+
+              {{ contact.message }}
 
             </div>
-
 
           </div>
           <!-- /.messages -->
