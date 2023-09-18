@@ -2,131 +2,131 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
 
-    <title>Boolzapp</title>
+  <title>Boolzapp</title>
 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-    <!-- font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- style css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
 
-    <body class="debug">
-        <div id='app'>
-          <div class="wrapper">
-            <div class="left">
-              <div class="user">
-                <div class="me">
-                  <div class="avatar">
-                    <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
-                  </div>
-                  <div class="name">{{me.name}}</div>
-                </div>
-                <div class="actions">
-                  <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
-                  <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
-                  <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
-                </div>
+  <body class="debug">
+    <div id='app'>
+      <div class="wrapper">
+        <div class="left">
+          <div class="user">
+            <div class="me">
+              <div class="avatar">
+                <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
               </div>
-              <!-- /.user -->
-              <div class="notifications">
-                <div class="bell">
-                  <i class="fa-solid fa-bell-slash fa-lg fa-fw"></i>
-                </div>
-                <div class="text">
-                  <p>Ricevi notifiche di nuovi messaggi</p>
-                  <a href="#">
-                    Attiva notifiche desktop
-                  </a>
-                </div>
-              </div>
-              <!-- /.notifications -->
-              <div class="searcharea d-flex">
-                
-                <button class="border-0 bg-white px-4">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-
-                <input type="text" class="w-100 border-0"
-                    placeholder="Cerca o inizia una nuova chat">
-              </div>
-              <!-- /.searcharea -->
-
-              <div class="contacts" >
-                <div @click="activeContact = index" class="contact" :class="index === activeContact ? 'active' : ''" v-for="(contact, index) in contacts">
-                  <div class="avatar">
-                    <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
-                  </div>
-                  <div class="text">
-                    {{contact.name}}
-                  </div>
-                </div>
-        
-      
-      
-              </div>
-              <!-- /.conacts -->
+              <div class="name">{{me.name}}</div>
             </div>
-            <!-- /.left -->
-            <div class="right">
-              <div class="active_contact">
-      
-                <div class="contact_details">
-                  <div class="avatar">
-                    <img :src="`./assets/img/avatar${me.avatar}.jpg`" alt="">
-                  </div>
-                  <div class="name">{{me.name}}</div>
-                </div>
-                <div class="actions">
-                  <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
-                  <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
-                  <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
-                </div>
-      
-              </div>
-              <!-- /.active_contact -->
-              <div class="messages" >
-                <div v-for="message in contacts[activeContact].messages">
-                    <div  :class="message.status" >
-                        {{ message.message }}
-                    </div>
-
-                </div>
-                   
-      
-              </div>
-              <!-- /.messages -->
-              <div class="toolbar">
-                <div class="emoji">
-                  <i class="fa-solid fa-smile    "></i>
-                </div>
-                <input type="text">
-                <div class="mic">
-                  <i class="fa-solid fa-microphone"></i>
-                </div>
-              </div>
-              <!-- /.toolbar -->
+            <div class="actions">
+              <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
+              <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
+              <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
             </div>
-            <!-- /.right -->
           </div>
+          <!-- /.user -->
+          <div class="notifications">
+            <div class="bell">
+              <i class="fa-solid fa-bell-slash fa-lg fa-fw"></i>
+            </div>
+            <div class="text">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <a href="#">
+                Attiva notifiche desktop
+              </a>
+            </div>
+          </div>
+          <!-- /.notifications -->
+          <div class="searcharea d-flex">
+
+            <button class="border-0 bg-white px-4">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <input type="text" class="w-100 border-0" placeholder="Cerca o inizia una nuova chat">
+          </div>
+          <!-- /.searcharea -->
+
+          <div class="contacts">
+            <div @click="activeContact = index" class="contact" :class="index === activeContact ? 'active' : ''"
+              v-for="(contact, index) in contacts">
+              <div class="avatar">
+                <img :src="`./assets/img/avatar${contact.avatar}.jpg`" alt="">
+              </div>
+              <div class="text">
+                {{contact.name}}
+              </div>
+            </div>
+
+
+
+          </div>
+          <!-- /.conacts -->
         </div>
+        <!-- /.left -->
+        <div class="right">
+          <div class="active_contact">
+
+            <div class="contact_details">
+              <div class="avatar" v-for="user in contacts[activeContact].avatar">
+                <img :src="`./assets/img/avatar${user.avatar}.jpg`" alt="">
+              </div>
+              <div class="name">{{activeContact}}</div>
+            </div>
+            <div class="actions">
+              <i class="fa-solid fa-circle-notch fa-lg fa-fw"></i>
+              <i class="fa-solid fa-comment fa-lg  fa-fw"></i>
+              <i class="fa-solid fa-ellipsis-v fa-lg fa-fw"></i>
+            </div>
+
+          </div>
+          <!-- /.active_contact -->
+          <div class="messages">
+            <div v-for="message in contacts[activeContact].messages">
+              <div :class="message.status">
+                {{ message.message }}
+              </div>
+
+            </div>
+
+
+          </div>
+          <!-- /.messages -->
+          <div class="toolbar">
+            <div class="emoji">
+              <i class="fa-solid fa-smile    "></i>
+            </div>
+            <input type="text">
+            <div class="mic">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+          <!-- /.toolbar -->
+        </div>
+        <!-- /.right -->
+      </div>
+    </div>
 
 
 
@@ -134,8 +134,8 @@
 
     <!-- bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
 
     <!-- vueJs -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
@@ -143,7 +143,7 @@
     <!-- my script -->
     <script type="text/javascript" src="./assets/js/script.js"></script>
 
-</body>
+  </body>
 
 </html>
 
