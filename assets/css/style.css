@@ -96,7 +96,7 @@ body
 .contacts
 {
   overflow-y: scroll;
-  height: calc(100% - 220px);
+  height: calc(100% - 244px);
 }
 
 .contact
